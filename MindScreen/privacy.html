@@ -1,30 +1,262 @@
-<html>
-<body># Privacy Policy
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Privacy Policy · MindScreen (灵录)</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-**Effective Date: April 5, 2026**
+        body {
+            background: #f5f7fc;
+            font-family: system-ui, -apple-system, 'Segoe UI', 'Roboto', 'Helvetica Neue', Helvetica, 'Noto Sans', sans-serif;
+            line-height: 1.5;
+            color: #1e2a3e;
+            padding: 2rem 1rem;
+        }
 
-**MindScreen (灵录)** (hereinafter referred to as "the App") respects and protects the personal privacy of all users. To provide you with more accurate and personalized services, the App will use and disclose your personal information in accordance with this Privacy Policy.
+        /* 主容器：类似卡片，干净优雅 */
+        .privacy-container {
+            max-width: 880px;
+            margin: 0 auto;
+            background: #ffffff;
+            border-radius: 28px;
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.05), 0 4px 8px rgba(0, 0, 0, 0.02);
+            overflow: hidden;
+            padding: 2rem 1.8rem;
+            transition: all 0.2s ease;
+        }
 
-#### 1. Information Collection and Use
-* **Screen Recording & Audio Data:** The core functionality requires access to your screen recording and microphone permissions.
-    * **Local Processing:** We understand the sensitivity of your data. All recorded video and audio are processed and stored **locally** on your device.
-* **Technical Data:** To optimize performance (e.g., device-specific media encoding and Hilt injection optimization), we may collect anonymous data such as device model and OS version.
+        @media (max-width: 640px) {
+            body {
+                padding: 1rem;
+            }
+            .privacy-container {
+                padding: 1.5rem 1.2rem;
+                border-radius: 24px;
+            }
+        }
 
-#### 2. Permissions Explained
-* **Screen Capture:** To record the screen content.
-* **Storage/Media Access:** To save recorded videos to your gallery or app-specific storage.
-* **Microphone:** To capture system audio or voiceovers.
+        /* 标题风格 */
+        h1 {
+            font-size: 2rem;
+            font-weight: 600;
+            letter-spacing: -0.3px;
+            color: #0f2b3d;
+            border-left: 5px solid #3b82f6;
+            padding-left: 1rem;
+            margin: 0 0 0.5rem 0;
+            line-height: 1.2;
+        }
 
-#### 3. Information Disclosure
-We do not sell, trade, or otherwise transfer your private audio/video data to third parties, except:
-* With your prior explicit consent;
-* To comply with legal obligations, regulations, or legal processes.
+        .effective-date {
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: #2c6e9e;
+            background: #eef4ff;
+            display: inline-block;
+            padding: 0.25rem 1rem;
+            border-radius: 30px;
+            margin: 0.5rem 0 1.2rem 0;
+        }
 
-#### 4. Data Security
-We implement industry-standard security measures (including low-level MediaExtractor security protocols) to protect your information and prevent unauthorized access or disclosure.
+        /* 正文段落 */
+        p {
+            margin: 1rem 0;
+            font-size: 1rem;
+            color: #2c3e4e;
+        }
 
-#### 5. Contact Us
-If you have any questions regarding this Privacy Policy, please contact us at:
-**mindscreen_support@yeah.net**
+        /* 加粗样式 */
+        strong, b {
+            font-weight: 600;
+            color: #0f2b3d;
+        }
+
+        /* 列表样式：干净圆点，间距舒适 */
+        ul, ol {
+            margin: 0.75rem 0 1rem 1.5rem;
+            padding-left: 0.25rem;
+        }
+
+        li {
+            margin: 0.6rem 0;
+            line-height: 1.5;
+            color: #2c3e4e;
+        }
+
+        /* 二级嵌套列表 */
+        ul ul {
+            margin: 0.4rem 0 0.2rem 1.5rem;
+            list-style-type: circle;
+        }
+
+        ul ul li {
+            margin: 0.4rem 0;
+        }
+
+        /* 标题层级 (h2 对应 markdown 中的 #### ) */
+        h2 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin: 1.8rem 0 0.8rem 0;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid #e6edf4;
+            color: #0f2b3d;
+            letter-spacing: -0.2px;
+        }
+
+        /* 第一个h2与上方保持合适间距 */
+        h2:first-of-type {
+            margin-top: 1rem;
+        }
+
+        /* 针对联系方式的特殊邮箱样式 */
+        .contact-email {
+            background: #f0f6fe;
+            padding: 0.75rem 1.2rem;
+            border-radius: 18px;
+            display: inline-block;
+            margin-top: 0.3rem;
+            font-size: 1rem;
+            font-weight: 500;
+            transition: background 0.2s;
+        }
+
+        .contact-email a {
+            color: #1e6dc7;
+            text-decoration: none;
+            font-weight: 600;
+            word-break: break-all;
+        }
+
+        .contact-email a:hover {
+            text-decoration: underline;
+            color: #0f4c8a;
+        }
+
+        /* 列表中的粗体醒目 */
+        li strong, li b {
+            font-weight: 600;
+            color: #1a4c7a;
+        }
+
+        /* 局部特殊高亮 (local processing 提醒) */
+        .highlight-local {
+            background: #fef9e3;
+            border-left: 3px solid #f5b042;
+            padding: 0.1rem 0.3rem;
+            border-radius: 6px;
+        }
+
+        /* 分割线轻描淡写 */
+        hr {
+            margin: 1rem 0;
+            border: none;
+            height: 1px;
+            background: #e2e8f0;
+        }
+
+        /* 优化嵌套列表内文字可读性 */
+        .nested-note {
+            font-size: 0.95rem;
+        }
+
+        footer {
+            margin-top: 2.5rem;
+            text-align: center;
+            font-size: 0.75rem;
+            color: #8ba0b0;
+            border-top: 1px solid #eef2f6;
+            padding-top: 1.5rem;
+        }
+
+        /* 按钮/链接重置 */
+        a {
+            color: #2c7da0;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+<div class="privacy-container">
+    <!-- 主标题：原markdown # Privacy Policy -->
+    <h1>Privacy Policy</h1>
+
+    <!-- 有效日期：**Effective Date: April 5, 2026** 转换 -->
+    <div class="effective-date">
+        <strong>Effective Date:</strong> April 5, 2026
+    </div>
+
+    <!-- 介绍段落：MindScreen (灵录) ... -->
+    <p>
+        <strong>MindScreen (灵录)</strong> (hereinafter referred to as "the App") respects and protects the personal privacy of all users. 
+        To provide you with more accurate and personalized services, the App will use and disclose your personal information 
+        in accordance with this Privacy Policy.
+    </p>
+
+    <!-- ########## 1. Information Collection and Use ########## -->
+    <h2>1. Information Collection and Use</h2>
+    <ul>
+        <li>
+            <strong>Screen Recording &amp; Audio Data:</strong> The core functionality requires access to your screen recording and microphone permissions.
+            <!-- 二级列表：Local Processing 缩进内容 -->
+            <ul>
+                <li>
+                    <strong>Local Processing:</strong> We understand the sensitivity of your data. All recorded video and audio are processed and stored 
+                    <strong>locally</strong> on your device.
+                </li>
+            </ul>
+        </li>
+        <li>
+            <strong>Technical Data:</strong> To optimize performance (e.g., device-specific media encoding and Hilt injection optimization), 
+            we may collect anonymous data such as device model and OS version.
+        </li>
+    </ul>
+
+    <!-- ########## 2. Permissions Explained ########## -->
+    <h2>2. Permissions Explained</h2>
+    <ul>
+        <li><strong>Screen Capture:</strong> To record the screen content.</li>
+        <li><strong>Storage/Media Access:</strong> To save recorded videos to your gallery or app-specific storage.</li>
+        <li><strong>Microphone:</strong> To capture system audio or voiceovers.</li>
+    </ul>
+
+    <!-- ########## 3. Information Disclosure ########## -->
+    <h2>3. Information Disclosure</h2>
+    <p>We do not sell, trade, or otherwise transfer your private audio/video data to third parties, except:</p>
+    <ul>
+        <li>With your prior explicit consent;</li>
+        <li>To comply with legal obligations, regulations, or legal processes.</li>
+    </ul>
+
+    <!-- ########## 4. Data Security ########## -->
+    <h2>4. Data Security</h2>
+    <p>
+        We implement industry-standard security measures (including low-level MediaExtractor security protocols) 
+        to protect your information and prevent unauthorized access or disclosure.
+    </p>
+
+    <!-- ########## 5. Contact Us ########## -->
+    <h2>5. Contact Us</h2>
+    <p>If you have any questions regarding this Privacy Policy, please contact us at:</p>
+    <div class="contact-email">
+        <strong>📧&nbsp;<a href="mailto:mindscreen_support@yeah.net">mindscreen_support@yeah.net</a></strong>
+    </div>
+
+    <!-- 轻量脚注：可选，只增加原文档未出现但保持整洁的信息（不改变原文内容，仅为布局留白） 
+         不添加任何多余隐私说明，仅体现设计完整性 -->
+    <footer>
+        © MindScreen · Local-first privacy commitment
+    </footer>
+</div>
 </body>
-
+</html>
